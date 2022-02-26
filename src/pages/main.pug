@@ -1,0 +1,29 @@
+extends template/_layout
+
+//- include ../components/Common/header/header
+include ../components/Sections/text-content/text-content
+include ../components/Sections/indicator/indicator
+include ../components/Sections/video/video
+//- include ../components/Common/footer/footer
+
+include ../components/Sections/article-slider/article-slider
+include ../components/Sections/gallery-tile/gallery-tile
+
+block vars
+    - var title = "Страница записи";
+    //- - var bodyclass = 'page-main';
+
+block content
+    //- +header()
+
+    main.container__bb-page
+        +text-content()
+        +indicator()
+        +article-slider()
+        +video()
+        +article-slider()
+        +gallery-tile()
+
+    //- +footer()
+
+
