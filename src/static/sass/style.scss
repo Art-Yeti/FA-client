@@ -1,8 +1,14 @@
 @import "src/static/sass/basic/common";
 @import "src/static/sass/swiper-bundle.scss"; //переименовал в scss
-
 @import "src/static/sass/fancybox.scss"; //переименовал в scss
 @import "src/static/sass/carousel.scss"; //переименовал в scss
+
+:root {
+    --padding-right: 0;
+    --padding-top: 0;
+}
+
+
 
 // *{
 //     box-sizing: border-box;
@@ -27,6 +33,21 @@
 //     }
 //   }
 
+body {
+    padding-top: 170px;
+    font-family: 'Roboto', sans-serif;
+
+    @include _1100 {
+        padding-top: 70px; 
+    }
+
+    &.lock-scroll {
+        padding-right: var(--padding-right);
+        overflow: hidden;
+    }
+
+}
+
 .fancybox__nav .carousel__button.is-next, 
 .fancybox__nav .carousel__button.is-prev {
     transform: translateY(-10%);
@@ -34,7 +55,7 @@
   
 .container__bb-page{
 
-    font-family: 'Roboto', sans-serif;
+    // font-family: 'Roboto', sans-serif;
     font-size: 17px;
     color: #000;
 
@@ -96,55 +117,57 @@
     }
 }
 
-.swiper-btn-prev{
-    right: unset;
-    left: -10px;
-    transform: rotate(180deg);
+// .container {
+    .swiper-btn-prev{
+        right: unset;
+        left: -10px;
+        transform: rotate(180deg);
 
-    &:hover{
-        transform: scale(1.07) rotate(180deg);
+        &:hover{
+            transform: scale(1.07) rotate(180deg);
+        }
+
+        @include _1100 {
+            left: 0;
+        }
+    } 
+
+    .spec-container {
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 1140px;
+
+        @include _576 {
+            padding:  0 10px;
+        }
     }
-
-    @include _1100 {
-        left: 0;
-    }
-} 
-
-.spec-container {
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: 1140px;
-
-    @include _576 {
-        padding:  0 10px;
-    }
-}
-
-h2 {
-    margin-bottom: 30px;
-    padding: 0 20px;
-    text-align: center;
-    font-weight: normal;
-    font-size: 25px;
-    color: #25282E;
-
-    @include _768 {
-        margin-bottom: 20px;
-        font-size: 20px;
-    }
-
-    @include _576 {
-        padding:  0 10px;
-    }
-}
-
-.bg-black {
-    background: #25282E;
 
     h2 {
-        color: #FFF;
-    }
-        
-}
+        margin-bottom: 30px;
+        padding: 0 20px;
+        text-align: center;
+        font-weight: normal;
+        font-size: 25px;
+        color: #25282E;
 
+        @include _768 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        @include _576 {
+            padding:  0 10px;
+        }
+    }
+
+    .bg-black {
+        background: #25282E;
+
+        h2 {
+            color: #FFF;
+        }
+            
+    }
+
+// }
 }

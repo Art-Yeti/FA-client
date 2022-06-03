@@ -1,4 +1,5 @@
 export default function text_content(Swiper) {
+
     // console.log('init');
 
     // let swiper = new Swiper(".js-text-content-slider-preview", {

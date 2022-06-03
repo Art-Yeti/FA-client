@@ -1,20 +1,22 @@
 extends template/_layout
 
-//- include ../components/Common/header/header
+include ../components/Common/popup/popup
+include ../components/Common/header/header
 include ../components/Sections/text-content/text-content
 include ../components/Sections/indicator/indicator
 include ../components/Sections/video/video
-//- include ../components/Common/footer/footer
+include ../components/Common/footer/footer
 
 include ../components/Sections/article-slider/article-slider
 include ../components/Sections/gallery-tile/gallery-tile
 
 block vars
-    - var title = "Страница записи";
+    - var title = "Frontacoustic";
     //- - var bodyclass = 'page-main';
 
 block content
-    //- +header()
+    +popup('search')
+    +header()
 
     main.container__bb-page
         +text-content()
@@ -24,6 +26,4 @@ block content
         +article-slider()
         +gallery-tile()
 
-    //- +footer()
-
-
+    +footer()
